@@ -3,6 +3,7 @@ package software.coley.recaf.services.decompile.cfr;
 import jakarta.annotation.Nonnull;
 import org.benf.cfr.reader.api.ClassFileSource;
 import org.benf.cfr.reader.bytecode.analysis.parse.utils.Pair;
+import org.benf.cfr.reader.state.ClassFileRelocator;
 import software.coley.recaf.path.ClassPathNode;
 import software.coley.recaf.workspace.model.Workspace;
 
@@ -61,5 +62,10 @@ public class ClassSource implements ClassFileSource {
 			code = result == null ? null : result.getValue().asJvmClass().getBytecode();
 		}
 		return new Pair<>(code, inputPath);
+	}
+
+	@Override
+	public Pair<byte[], String> getClassFileContent(final String inputPath, final ClassFileRelocator classFileRelocator) {
+		return this.getClassFileContent(classFileRelocator.correctPath(inputPath));
 	}
 }

@@ -1,5 +1,6 @@
 package software.coley.recaf.services.decompile.cfr;
 
+import it.unimi.dsi.fastutil.objects.ObjectList;
 import jakarta.annotation.Nonnull;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -13,7 +14,6 @@ import software.coley.recaf.util.ReflectUtil;
 import software.coley.recaf.workspace.model.Workspace;
 
 import java.lang.reflect.Field;
-import java.util.Collections;
 import java.util.Objects;
 
 /**
@@ -52,7 +52,7 @@ public class CfrDecompiler extends AbstractJvmDecompiler {
 				.withOutputSink(sink)
 				.withOptions(config.toMap())
 				.build();
-		driver.analyse(Collections.singletonList(name));
+		driver.analyse(ObjectList.of(name));
 		String decompile = sink.getDecompilation();
 		int configHash = getConfig().getHash();
 		if (decompile == null) {

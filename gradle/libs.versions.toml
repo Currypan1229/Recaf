@@ -6,7 +6,7 @@ binary-resources = "31.3.0-alpha01.8"
 cafedude = "2.2.0"
 cdi-api = "4.1.0"
 cdi-impl = "6.0.0.Final"
-cfr = "0.152"
+cfr = "0.3-SNAPSHOT"
 dex-translator = "1.1.1"
 diffutils = "4.15"
 docking = "1.2.3"
@@ -65,7 +65,7 @@ cafedude = { module = "software.coley:cafedude-core", version.ref = "cafedude" }
 cdi-api = { module = "jakarta.enterprise:jakarta.enterprise.cdi-api", version.ref = "cdi-api" }
 cdi-impl = { module = "org.jboss.weld.se:weld-se-core", version.ref = "cdi-impl" }
 
-cfr = { module = "org.benf:cfr", version.ref = "cfr" }
+cfr = { module = "net.fabricmc:cfr", version.ref = "cfr" }
 
 dex-translator = { module = "software.coley:dex-translator", version.ref = "dex-translator" }
 

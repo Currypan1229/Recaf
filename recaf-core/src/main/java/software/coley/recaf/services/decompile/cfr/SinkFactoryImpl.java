@@ -1,13 +1,12 @@
 package software.coley.recaf.services.decompile.cfr;
 
+import it.unimi.dsi.fastutil.objects.ObjectList;
 import jakarta.annotation.Nullable;
 import org.benf.cfr.reader.api.OutputSinkFactory;
 import org.slf4j.Logger;
 import software.coley.recaf.analytics.logging.Logging;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Cfr logging/output sinker.
@@ -20,8 +19,8 @@ public class SinkFactoryImpl implements OutputSinkFactory {
 	private String decompile;
 
 	@Override
-	public List<SinkClass> getSupportedSinks(SinkType sinkType, Collection<SinkClass> collection) {
-		return Arrays.asList(SinkClass.values());
+	public ObjectList<SinkClass> getSupportedSinks(SinkType sinkType, Collection<SinkClass> collection) {
+		return ObjectList.of(SinkClass.values());
 	}
 
 	@Override
