@@ -53,7 +53,9 @@ Recaf can run as a command line application, which can be especially useful when
 ## Development Setup
 
 Clone the repository via `git clone https://github.com/Currypan1229/Recaf.git`
-Clone the repository via `git clone https://github.com/FastMinecraft/cfr.git`
+
+Clone the updated cfr repository via `git clone https://github.com/FastMinecraft/cfr.git`
+
 
 Build cfr and publish to maven local with gradle
 
